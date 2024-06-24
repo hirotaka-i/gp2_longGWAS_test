@@ -1,8 +1,8 @@
-### Preparatioin for test_longGWAS (Do not run this command)
+### Preparatioin for gp2_longGWAS_test (Do not run this command)
 The followings are the command to make this repository. Don't run this command. This is just for the record.
 ```
-git clone https://github.com/hirotaka-i/new_analysis.git test_longGWAS
-cd test_longGWAS
+git clone https://github.com/hirotaka-i/new_analysis.git gp2_longGWAS_test
+cd gp2_longGWAS_test
 rm -rf .git # remove the git history
 git clone https://github.com/AMCalejandro/testdata
 mv testdata example # default demo command uses "example" folder name
@@ -11,16 +11,18 @@ echo "work" >> .gitignore
 echo "files" >> .gitignore
 echo ".nextflow" >> .gitignore
 git init
+
 ```
 
 # Nextflow command to test
 ```
-git clone ~~~.git
-cd test_longGWAS
-# default
+git clone https://github.com/hirotaka-i/gp2_longGWAS_test.git
+cd gp2_longGWAS_test
+
+# default run
 nextflow run michael-ta/longitudinal-GWAS-pipeline -profile standard -r main -resume
 
-# with params
+# run with params
 nextflow run michael-ta/longitudinal-GWAS-pipeline \
 -params-file params.yml \
 -profile standard -r main
@@ -32,7 +34,7 @@ nextflow run michael-ta/longitudinal-GWAS-pipeline \
 If you need to degub the pipeline, you can fork the repository and modify the code on your local environment. Then run it instead of `Michael-ta/longitudinal-GWAS-pipeline`. The example is shown below.
 ```
 # fork https://github.com/michael-ta/longitudinal-GWAS-pipeline.git on GitHub
-# clone the forked repository somewhere outside of the test_longGWAS folder
+# clone the forked repository somewhere outside of the gp2_longGWAS_test folder
 # git clone YOUR_FORKED_REPOSITORY
 # cd YOUR_FORKED_REPOSITORY
 # git remote add upstream https://github.com/michael-ta/longitudinal-GWAS-pipeline.git
@@ -43,7 +45,7 @@ If you need to degub the pipeline, you can fork the repository and modify the co
 ## Make a pull request on GitHub
 ```
 ```
-# going back to the test_longGWAS folder
+# going back to the gp2_longGWAS_test folder
 nextflow run PATH_TO_YOUR_FORKED_REPOSITORY/main.nf -params-file params.yml -profile standard
 ```
 nextflow run ../longitudinal-GWAS-pipeline/main.nf -params-file params.yml -profile standard
