@@ -1,0 +1,33 @@
+---
+# Input files
+input                 : "${baseDir}/example/genotype/chr[20-22].vcf"
+covarfile             : "${baseDir}/example/covariates.tsv"
+phenofile             : "${baseDir}/example/phenotype.cs.tsv"
+
+# Variables names
+pheno_name            : 'y'
+covariates            : 'SEX age_at_baseline'
+study_col             : 'study_arm'
+time_col              : 'study_days'
+
+# Model variables
+longitudinal_flag     : false
+survival_flag         : false
+linear_flag           : true
+chunk_flag            : true
+chunk_size            : 60000
+plink_chunk_size      : 10000
+
+# Parameters for genetic QC
+r2thres               : -9
+minor_allele_freq     : '0.05'
+minor_allele_ct       : '20'
+kinship               : '0.177'
+ancestry              : 'EUR'
+assembly              : 'hg19'
+
+# Identifier for the input genotype files - useful to cache results
+dataset               : 'TEST_2'
+
+# Generate manhattan plot with result files
+mh_plot               : true
